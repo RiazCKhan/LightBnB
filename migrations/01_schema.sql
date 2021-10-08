@@ -15,7 +15,7 @@ CREATE TABLE properties (
     owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     title VARCHAR(255) NOT NULL,
     description TEXT,
-    thumb_photo_url VARCHAR(255) NOT NULL,
+    thumbnail_photo_url VARCHAR(255) NOT NULL,
     cover_photo_url VARCHAR(255) NOT NULL,
     cost_per_night INTEGER NOT NULL DEFAULT 0,
     parking_spaces INTEGER NOT NULL DEFAULT 0,
@@ -44,4 +44,4 @@ CREATE TABLE property_reviews (
   reservation_id INTEGER REFERENCES reservations(id) ON DELETE CASCADE,
   rating SMALLINT NOT NULL DEFAULT 0,
   message TEXT
-) ;
+);
