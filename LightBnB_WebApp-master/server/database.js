@@ -104,8 +104,6 @@ exports.getAllReservations = getAllReservations;
  */
 
 
-
-
 const getAllProperties = function (options, limit = 10) {
 
   const queryParams = [];
@@ -114,19 +112,51 @@ const getAllProperties = function (options, limit = 10) {
   SELECT properties.*, avg(property_reviews.rating) as average_rating
   FROM properties
   JOIN property_reviews ON properties.id = property_id
+  WHERE 1 = 1
   `;
+
+// Issue 1: Multi Where clause
+// Issue 2: min - max rep ?? else if solution ?
+// Issue 3: why limit 20 ?
+
+
+  if (options.owner_id) {
+    queryParams.push(`${options.owner_id}`);
+    queryString += `AND owner_id = $${queryParams.length} `; // TO BE CHANGED
+  }
 
   if (options.city) {
     queryParams.push(`%${options.city}%`);
-    queryString += `WHERE city LIKE $${queryParams.length} `;
+    queryString += `AND city LIKE $${queryParams.length} `;
   }
 
-  if (options.cost_per_night) { // check header for actual query param under network header
-    queryParams.push(`%${options.cost_per_night}`);
-    queryString += `AND cost_per_night = $${queryParams.length}`
+/*  BELOW IS WORKING BUT NOT NEEDED AS option.min and option.max do the same job. 
+THIS IS BECAUSE if option.min is present with no max, min fires and vice versa - 
+IF both fields are populated then both will fire as true HENCE no need for a BETWEEN statement as two AND statements are written. */
+
+  // if (options.minimum_price_per_night && options.maximum_price_per_night) {
+  //   queryParams.push(`${options.minimum_price_per_night}`);
+  //   queryString += `AND cost_per_night BETWEEN $${queryParams.length}`
+  //   queryParams.push(`${options.maximum_price_per_night}`);
+  //   queryString += `AND $${queryParams.length}`
+  // }
+
+  if (options.minimum_price_per_night) {
+    queryParams.push(`${options.minimum_price_per_night}`);
+    queryString += `AND cost_per_night >= $${queryParams.length}`
   }
 
-  queryParams.push(limit);
+  if (options.maximum_price_per_night) {
+    queryParams.push(`${options.maximum_price_per_night}`);
+    queryString += `AND cost_per_night <= $${queryParams.length}`
+  }
+
+  if (options.minimum_rating) {
+    queryParams.push(`${options.minimum_rating}`);
+    queryString += `AND rating >= $${queryParams.length}`
+  }
+
+  queryParams.push(limit); // WHY LIMIT 20 ?
   queryString += `
   GROUP BY properties.id
   ORDER BY cost_per_night
