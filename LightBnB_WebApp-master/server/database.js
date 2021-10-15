@@ -116,12 +116,12 @@ const getAllProperties = function (options, limit = 10) {
 
   if (options.owner_id) {
     queryParams.push(`${options.owner_id}`);
-    queryString += `AND owner_id = $${queryParams.length} `; // TO BE CHANGED
+    queryString += `AND owner_id = $${queryParams.length}`
   }
 
   if (options.city) {
     queryParams.push(`%${options.city}%`);
-    queryString += `AND city LIKE $${queryParams.length} `;
+    queryString += `AND city LIKE $${queryParams.length}`
   }
 
   if (options.minimum_price_per_night) {
@@ -154,7 +154,7 @@ const getAllProperties = function (options, limit = 10) {
     .catch((err) => {
       console.log(err.message);
     });
-  return getProperties
+  return getProperties;
 }
 exports.getAllProperties = getAllProperties;
 
@@ -173,20 +173,19 @@ const addProperty = function (property) {
   const insertProperty = pool
     .query(queryString, queryParams)
     .then((result) => {
-      return result.rows
+      return result.rows;
     })
     .catch((err) => {
       console.log(err.message);
     })
-  return insertProperty
+  return insertProperty;
 }
 exports.addProperty = addProperty;
 
-
-const addReservation = function(reservation) {
-  /*
-   * Adds a reservation from a specific user to the database
-   */
+//
+// * Adds a reservation from a specific user to the database
+//
+const addReservation = function(reservation) {  
   return pool.query(`INSERT INTO reservations (start_date, end_date, property_id, guest_id) VALUES ($1, $2, $3, $4) RETURNING *;`, [reservation.start_date, reservation.end_date, reservation.property_id, reservation.guest_id])
   .then((result) => {
     console.log(result.rows)
@@ -194,3 +193,27 @@ const addReservation = function(reservation) {
   })
 }
 exports.addReservation = addReservation;
+
+//
+// * Gets upcoming reservations
+//
+const getUpcomingReservations = function(guest_id, limit = 10) {
+
+}
+exports.getUpcomingReservations = getUpcomingReservations;
+
+//
+// * Updates an existing reservation with new information
+//
+const updateReservation = function(reservationId, newReservationData) {
+
+}
+exports.updateReservation = updateReservation;
+
+//
+// * Deletes an existing reservation
+//
+const deleteReservation = function(reservationId) {
+
+}
+exports.deleteReservation = deleteReservation;
