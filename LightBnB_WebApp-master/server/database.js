@@ -229,3 +229,14 @@ const deleteReservation = function(reservationId) {
 
 }
 exports.deleteReservation = deleteReservation;
+
+//
+// * Get Individial Reservation
+//
+const getIndividualReservation = function(reservationId) {
+  const queryString = `SELECT * FROM reservations WHERE reservations.id = $1`;
+  return pool.query(queryString, [reservationId])
+    .then(res => res.rows[0]);
+}
+
+exports.getIndividualReservation = getIndividualReservation;
