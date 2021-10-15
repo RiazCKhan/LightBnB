@@ -1,4 +1,4 @@
-const { getUpcomingReservations } = require("../../../server/database");
+// const {  } = require("../../../server/database"); // REMOVE?
 
 $(() => {
   window.header = {};
