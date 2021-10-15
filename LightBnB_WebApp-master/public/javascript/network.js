@@ -67,3 +67,10 @@ function getUpcomingReservations() {
     url,
   });
 }
+
+function getIndividualReservation(reservationId) {
+  let url = `/api/reservations/${reservationId}`
+  return $.ajax({
+    url,
+  })
+}
