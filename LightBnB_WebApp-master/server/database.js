@@ -238,5 +238,4 @@ const getIndividualReservation = function(reservationId) {
   return pool.query(queryString, [reservationId])
     .then(res => res.rows[0]);
 }
-
 exports.getIndividualReservation = getIndividualReservation;
