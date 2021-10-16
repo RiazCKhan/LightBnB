@@ -70,6 +70,11 @@ module.exports = function(router, database) {
   router.delete('/reservations/:reservationId', (req, res) => {
     const reservationId = req.params.reservationId;
     database.deleteReservation(reservationId)
+    .then(reservation => res.send(reservation))
+    .catch(e => {
+      console.error(e);
+      res.send(e);
+    })
   })
 
   return router;
