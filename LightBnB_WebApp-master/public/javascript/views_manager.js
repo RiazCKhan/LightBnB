@@ -14,7 +14,7 @@ $(() => {
     $updateReservationForm.detach();
 
     let dataTag = "";
-    
+
     switch (item) {
       case 'listings':
         $propertyListings.appendTo($main);
