@@ -28,7 +28,7 @@ const signUp = function(data) {
   });
 }
 
-const getAllListings = function(params) {
+function getAllListings(params) {
   let url = "/api/properties";
   if (params) {
     url += "?" + params;
