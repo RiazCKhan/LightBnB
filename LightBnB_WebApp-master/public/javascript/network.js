@@ -1,18 +1,18 @@
-function getMyDetails() {
+const getMyDetails = function() {
   console.log("getMyDetails");
   return $.ajax({
     url: "/users/me",
   });
 }
 
-function logOut() {
+const logOut = function() {
   return $.ajax({
     method: "POST",
     url: "/users/logout",
   })
 }
 
-function logIn(data) {
+const logIn = function(data) {
   return $.ajax({
     method: "POST",
     url: "/users/login",
@@ -20,7 +20,7 @@ function logIn(data) {
   });
 }
 
-function signUp(data) {
+const signUp = function(data) {
   return $.ajax({
     method: "POST",
     url: "/users",
@@ -28,7 +28,7 @@ function signUp(data) {
   });
 }
 
-function getAllListings(params) {
+const getAllListings = function(params) {
   let url = "/api/properties";
   if (params) {
     url += "?" + params;
@@ -38,7 +38,7 @@ function getAllListings(params) {
   });
 }
 
-function getFulfilledReservations() {
+const getFulfilledReservations = function() {
   let url = "/api/reservations";
   return $.ajax({
     url,
@@ -61,14 +61,14 @@ const submitReservation = function(data) {
   })
 }
 
-function getUpcomingReservations() {
+const getUpcomingReservations = function() {
   let url = "/api/reservations/upcoming";
   return $.ajax({
     url,
   });
 }
 
-function getIndividualReservation(reservationId) {
+const getIndividualReservation = function(reservationId) {
   let url = `/api/reservations/${reservationId}`
   return $.ajax({
     url,
