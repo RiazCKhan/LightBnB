@@ -19,7 +19,7 @@ $(() => {
 
   function addProperties(properties, isReservation = false) {
     // if it's a reservation, we don't want to clear the listings a second time in the addProperties function call
-    if (isReservation) {
+    if (!isReservation) {
       clearListings();
     }
     getMyDetails()
