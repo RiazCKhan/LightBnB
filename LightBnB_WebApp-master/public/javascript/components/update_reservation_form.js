@@ -236,4 +236,10 @@ $(() => {
       views_manager.show('updateReservation', dataObj);
     }
   });
+
+  $('body').on('click', '#reservation-form__cancel', function() {
+    views_manager.show('listings');
+    return false;
+  });
+
 });
