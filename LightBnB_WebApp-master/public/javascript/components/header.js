@@ -1,4 +1,4 @@
-// const {  } = require("../../../server/database"); // REMOVE?
+// const { getUpcomingReservations } = require("../../../server/database"); // REMOVE?
 
 $(() => {
   window.header = {};
