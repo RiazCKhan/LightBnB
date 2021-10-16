@@ -30,12 +30,12 @@
   .property-listing {
     flex-direction: column;
     height: 400px; } }
-.search-property-form, .login-form, .new-property-form, .new-reservation-form, .update-reservation-form, .sign-up-form {
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  margin: auto; }
+  .search-property-form, .login-form, .new-property-form, .new-reservation-form, .update-reservation-form, .sign-up-form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: auto; }
   .search-property-form__field-wrapper, .login-form__field-wrapper, .new-property-form__field-wrapper, .sign-up-form__field-wrapper {
     width: 100%;
     display: flex; }
