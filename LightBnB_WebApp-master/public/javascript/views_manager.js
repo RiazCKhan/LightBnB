@@ -48,7 +48,7 @@ $(() => {
   `
         // if there's an error message we want to display that as well:
         const errorMessage = data.error_message ? `<h4>${data.error_message}</h4>` : ``;
-        $(reservationDetails).appendTo($main).delay(1500).slideUp('slow');
+        $(reservationDetails).appendTo($main).delay(2000).slideUp('slow');
         $updateReservationForm.appendTo($main);
         $(dataTag).appendTo("#datatag");
         $(errorMessage).appendTo('#error-message');
