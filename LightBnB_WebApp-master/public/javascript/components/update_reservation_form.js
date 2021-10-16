@@ -212,9 +212,17 @@ $(() => {
     }
   
     if ((startDate || endDate) && !errorMessage) {
-      const reservationId = $(this).find("#datatag h4").text();
+      const reservationId = $(this).find("#datatag-reservation-id").text();
       const dataObj = { start_date: startDate, end_date: endDate, reservation_id: reservationId };
-      console.log(dataObj);
+      updateReservation(dataObj)
+      .then(data => {
+        console.log(`updated reservation: ${data}`);
+        views_manager.show('listings');
+      })
+      .catch(error => {
+        console.error(error);
+        views_manager.show('listings');
+      })
     } else {
       console.log(errorMessage);
       // we can redisplay the form by pulling the information in the datatag!
