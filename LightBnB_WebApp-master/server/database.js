@@ -249,7 +249,7 @@ const deleteReservation = function(reservationId) {
   const queryString = `DELETE FROM reservations WHERE id = $1`;
   return pool.query(queryString, queryParams)
     .then(() => console.log("Successfully deleted!"))
-    .catch(() => console.error(err));
+    .catch((err) => console.error(err));
 }
 exports.deleteReservation = deleteReservation;
 
