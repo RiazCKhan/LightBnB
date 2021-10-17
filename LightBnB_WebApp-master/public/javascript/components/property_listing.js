@@ -23,6 +23,7 @@ $(() => {
                 <button id="delete-property-${property.id}" class="delete-button">Delete</button>
               ` : ``
             }
+            <button id="review-details-${property.id}" class="review_details">Browse ${property.review_count} reviews</button>
           </footer>
         </section>
       </article>
