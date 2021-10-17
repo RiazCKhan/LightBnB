@@ -234,9 +234,11 @@ const updateReservation = function(reservationData) {
   }
   queryString += ` WHERE id = $${queryParams.length + 1} RETURNING *;`
   queryParams.push(reservationData.reservation_id);
-  console.log(queryString);
+  // console.log(queryString);
   return pool.query(queryString, queryParams)
-    .then(res => res.rows[0])
+  .then((res) => {
+    // console.log('result', res.rows[0])
+      res.rows[0]})
     .catch(err => console.error(err));
 }
 exports.updateReservation = updateReservation;
