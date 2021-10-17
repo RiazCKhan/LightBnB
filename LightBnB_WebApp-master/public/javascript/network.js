@@ -76,7 +76,6 @@ const getIndividualReservation = function(reservationId) {
 }
 
 const updateReservation = function(data) {
-  console.log('spce', data)
   return $.ajax({
     method: "POST",
     url: `/api/reservations/${data.reservation_id}`,
