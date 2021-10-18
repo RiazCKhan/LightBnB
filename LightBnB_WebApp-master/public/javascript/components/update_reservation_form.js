@@ -216,8 +216,16 @@ $(() => {
       const dataObj = { start_date: startDate, end_date: endDate, reservation_id: reservationId };
       updateReservation(dataObj)
       .then(data => {
-        console.log(`updated reservation: ${data}`);
-        views_manager.show('listings');
+        propertyListings.clearListings();
+        getFulfilledReservations()
+          .then(function(json) {
+            propertyListings.addProperties(json.reservations, { upcoming: false });
+            getUpcomingReservations()
+            .then(json => {
+              propertyListings.addProperties(json.reservations, { upcoming: true })
+            })
+            views_manager.show('listings');
+          })
       })
       .catch(error => {
         console.error(error);
