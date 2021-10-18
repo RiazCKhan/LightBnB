@@ -27,6 +27,12 @@ $(() => {
       case 'searchProperty':
         $searchPropertyForm.appendTo($main);
         break;
+      case 'newReview':
+        dataTag = <h4>${data}</h4>;
+        $newReviewForm.appendTo($main);
+        $("#datatag").empty();
+        $(dataTag).appendTo("#datatag");
+        break;
       case 'showReviews':
         getReviewsByProperty(data)
           .then(reviews => propertyReviews.addReviews(reviews))
