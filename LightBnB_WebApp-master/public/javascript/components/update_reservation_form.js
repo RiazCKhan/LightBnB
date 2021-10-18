@@ -216,7 +216,7 @@ $(() => {
       const dataObj = { start_date: startDate, end_date: endDate, reservation_id: reservationId };
       updateReservation(dataObj)
       .then(data => {
-        console.log(`updated reservation: ${data}`);
+        // console.log(`updated reservation: ${data}`, data);
         views_manager.show('listings');
       })
       .catch(error => {

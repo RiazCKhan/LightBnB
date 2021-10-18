@@ -10,6 +10,7 @@ $(() => {
   window.propertyListings = {};
 
   function addListing(listing) {
+    console.log('addListing');
     $propertyListings.append(listing);
   }
   function clearListings() {
@@ -22,15 +23,20 @@ $(() => {
     if (!isReservation) {
       clearListings();
     }
-    getMyDetails()
-    .then()
+    // getMyDetails()
+    // .then()
     for (const propertyId in properties) {
       const property = properties[propertyId];
       const listing = propertyListing.createListing(property, isReservation);
       addListing(listing);
     }
+
+    console.log({ isReservation, properties});
     if (isReservation) {
+      console.log('🍔🍔🍔🍔🍔🍔');
+      console.log('Number of elements that should be getting a click handler: ', $('.update-button').length);
       $('.update-button').on('click', function() {
+        console.log('🍍🍍🍍🍍🍍');
         const idData = $(this).attr('id').substring(16);
         getIndividualReservation(idData).then(data => {
           views_manager.show("updateReservation", data);       
@@ -45,7 +51,4 @@ $(() => {
     }
   }
   window.propertyListings.addProperties = addProperties;
-
-
-
 });

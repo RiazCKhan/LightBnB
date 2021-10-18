@@ -27,7 +27,7 @@ $(() => {
           </footer>
         </section>
       </article>
-    `
+    `;
   }
 
   window.propertyListing.createListing = createListing;
