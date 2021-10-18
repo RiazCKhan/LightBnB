@@ -22,8 +22,7 @@ $(() => {
     if (!isReservation) {
       clearListings();
     }
-    // getMyDetails()
-    // .then()
+
     for (const propertyId in properties) {
       const property = properties[propertyId];
       const listing = propertyListing.createListing(property, isReservation);

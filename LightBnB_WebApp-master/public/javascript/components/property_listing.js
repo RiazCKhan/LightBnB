@@ -29,7 +29,5 @@ $(() => {
       </article>
     `
   }
-
   window.propertyListing.createListing = createListing;
-
 });
