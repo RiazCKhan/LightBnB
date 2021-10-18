@@ -14,6 +14,7 @@ $(() => {
     $updateReservationForm.detach();
     $('#reservation-details').detach();
     $propertyReviews.detach()
+    $newReviewForm.detach()
 
     let dataTag = "";
 
@@ -28,7 +29,7 @@ $(() => {
         $searchPropertyForm.appendTo($main);
         break;
       case 'newReview':
-        dataTag = <h4>${data}</h4>;
+        dataTag = `<h4>${data}</h4>`;
         $newReviewForm.appendTo($main);
         $("#datatag").empty();
         $(dataTag).appendTo("#datatag");
