@@ -32,7 +32,7 @@ $(() => {
       </article>`
     }).join('');
     $propertyReviews.append(reviewHtml);
-    $propertyReviews.append(`<span class="property-reviews__return">Return to Listings</span>`);
+    $propertyReviews.append(`<button class="property-reviews__return">Return to Listings</button>`);
   
     $('.property-reviews__return').on('click', function() {
       views_manager.show('none');
