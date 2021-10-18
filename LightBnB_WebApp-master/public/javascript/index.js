@@ -11,6 +11,7 @@ $(() => {
       console.log('index.js idData', idData);
       getReviewsByProperty(idData).then((data) => {
         console.log('index.js data promise', data)});
+        views_manager.show('showReviews', idData);
     })
   });
 });
