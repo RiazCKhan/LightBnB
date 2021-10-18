@@ -86,9 +86,11 @@ $(() => {
   $("header").on('click', '.login_button', () => {
     views_manager.show('logIn');
   });
+
   $("header").on('click', '.sign-up_button', () => {
     views_manager.show('signUp');
   });
+  
   $("header").on('click', '.logout_button', () => {
     logOut().then(() => {
       header.update(null);
