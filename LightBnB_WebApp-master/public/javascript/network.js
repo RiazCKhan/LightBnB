@@ -1,5 +1,4 @@
 const getMyDetails = function() {
-  console.log("getMyDetails");
   return $.ajax({
     url: "/users/me",
   });
@@ -91,7 +90,6 @@ const deleteReservation = function(data) {
 }
 
 const getReviewsByProperty = function(propertyId) {
-  console.log('network.js', propertyId)
   const url = `api/reviews/${propertyId}`;
   return $.ajax({
     url,
@@ -99,7 +97,6 @@ const getReviewsByProperty = function(propertyId) {
 }
 
 const submitReview = function(data) {
-  console.log('submit review', data)
   return $.ajax({
     method: "POST",
     url: `api/reviews/${data.reservationId}`,

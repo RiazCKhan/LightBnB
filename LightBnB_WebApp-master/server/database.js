@@ -234,10 +234,8 @@ const updateReservation = function(reservationData) {
   }
   queryString += ` WHERE id = $${queryParams.length + 1} RETURNING *;`
   queryParams.push(reservationData.reservation_id);
-  // console.log(queryString);
   return pool.query(queryString, queryParams)
   .then((res) => {
-    // console.log('result', res.rows[0])
       return res.rows[0]})
     .catch(err => console.error(err));
 }
@@ -281,8 +279,6 @@ const getReviewsByProperty = function(propertyId) {
   `
   const queryParams = [propertyId];
   return pool.query(queryString, queryParams).then((res) => {
-    console.log('DB query', queryString, queryParams)
-    console.log('DB getReviewProp Promise', res.rows)
     return res.rows})
 }
 exports.getReviewsByProperty = getReviewsByProperty;

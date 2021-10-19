@@ -17,7 +17,6 @@ $(() => {
   window.propertyReviews.clearReviews = clearReviews;
 
   function addReviews(reviews) {
-    console.log('prop-reviews.js', reviews)
     clearReviews();
     $propertyReviews.append(`<h3>Reviews for ${reviews[0].property_title}</h3>`);
     const reviewHtml = reviews.map(review => {

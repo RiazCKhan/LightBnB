@@ -8,9 +8,9 @@ $(() => {
     })
     $('.review_details').on('click', function() {
       const idData = $(this).attr('id').substring(15);
-      console.log('index.js idData', idData);
+      console.log(idData);
       getReviewsByProperty(idData).then((data) => {
-        console.log('index.js data promise', data)});
+        console.log(data)});
         views_manager.show('showReviews', idData);
     })
   });
