@@ -20,6 +20,7 @@ $(() => {
 
     switch (item) {
       case 'listings':
+        console.log('11111')
         $propertyListings.appendTo($main);
         break;
       case 'newProperty':

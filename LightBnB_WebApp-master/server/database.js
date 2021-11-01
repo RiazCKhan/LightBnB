@@ -146,9 +146,12 @@ const getAllProperties = function (options, limit = 10) {
   LIMIT $${queryParams.length};
   `;
 
+console.log('get all property querystring', queryString, queryParams)
+
   const getProperties = pool
     .query(queryString, queryParams)
     .then((result) => {
+      console.log('inside the promise resultrows', result.rows)
       return result.rows;
     })
     .catch((err) => {

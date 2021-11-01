@@ -99,7 +99,7 @@ $(() => {
 
   $newPropertyForm.on('submit', function (event) {
     event.preventDefault();
-
+    console.log('newpropertyform fn', event)
     views_manager.show('none');
 
     const data = $(this).serialize();

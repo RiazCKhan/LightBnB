@@ -31,6 +31,7 @@ function getAllListings(params) {
   let url = "/api/properties";
   if (params) {
     url += "?" + params;
+    console.log({url})
   }
   return $.ajax({
     url,
