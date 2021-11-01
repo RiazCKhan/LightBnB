@@ -18,17 +18,17 @@ INSERT INTO properties VALUES
 (7, 7, 'The Bat Cave', 'description', 'https://images.pexels.com/photos/2076739/pexels-photo-2076739.jpeg?auto=compress&cs=tinysrgb&h=350', 'https://images.pexels.com/photos/2076739/pexels-photo-2076739.jpeg', 999, 3, 7, 12, 'Canada', '58 Estate Blvd', 'Toronto', 'ON', 'B5B 1M1', true),
 (8, 8, 'Mortal Kombat', 'description', 'https://images.pexels.com/photos/1756826/pexels-photo-1756826.jpeg?auto=compress&cs=tinysrgb&h=350', 'https://images.pexels.com/photos/1756826/pexels-photo-1756826.jpeg', 89, 1, 1, 1, 'Canada', '69 Underworld Cres', 'Toronto', 'ON', 'P3P 2J2', true);
 
-INSERT INTO reservations VALUES
-(1, '2018-09-11', '2018-09-26', 1, 8),
-(2, '2019-01-04', '2019-02-01', 2, 7),
-(3, '2021-10-01', '2021-10-14', 3, 6),
-(4, '2014-10-21', '2014-10-21', 4, 5),
-(5, '2016-07-17', '2016-08-01', 5, 4),
-(6, '2018-05-01', '2018-05-27', 6, 3),
-(7, '2022-10-04', '2022-10-23', 7, 2),
-(8, '2015-09-13', '2015-09-30', 8, 1),
-(9, '2023-05-27', '2023-05-28', 1, 8),
-(10, '2023-04-23', '2023-05-02', 2, 3);
+-- INSERT INTO reservations VALUES
+-- (1, '2018-09-11', '2018-09-26', 1, 8),
+-- (2, '2019-01-04', '2019-02-01', 2, 7),
+-- (3, '2021-10-01', '2021-10-14', 3, 6),
+-- (4, '2014-10-21', '2014-10-21', 4, 5),
+-- (5, '2016-07-17', '2016-08-01', 5, 4),
+-- (6, '2018-05-01', '2018-05-27', 6, 3),
+-- (7, '2022-10-04', '2022-10-23', 7, 2),
+-- (8, '2015-09-13', '2015-09-30', 8, 1),
+-- (9, '2023-05-27', '2023-05-28', 1, 8),
+-- (10, '2023-04-23', '2023-05-02', 2, 3);
 
 INSERT INTO property_reviews VALUES
   (1, 8, 3, 10, 4, 'messages'),
